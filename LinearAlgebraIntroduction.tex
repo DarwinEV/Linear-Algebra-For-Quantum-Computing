@@ -272,21 +272,52 @@ $T_1 \otimes T_2$ = $T_2 \otimes T_1$
 \section{Linear Operation in Hilbert Space}
 \subsection{Dirac's Notation (Bra-ket)}
 \begin{itemize}
+% ---"BRA" and "KET" DEFINITIONS--- %
     \item \textbf{Ket} is the word used for the column vector: $\ket{x} = \begin{bmatrix}
         x_{1} \\
         x_{2} \\
         \vdots \\
         x_{n}
     \end{bmatrix} \in \mathbb{C}^{n}$
+
     \item \textbf{Bra} is the word used for the row vector(\textbf{Conjugate Transpose}): $\bra{x} = [x_{1}^*, x_{2}^*, \dots, x_{n}^*] = (\ket{x})^* \in \mathbb{C}^n$
-    \item Inner Product: \\
+    
+% ---INNER PRODUCT--- %
+    \item \textbf{Inner Product}: ($|\mathbf{x} \rangle, |\mathbf{y} \rangle$) = $\langle \mathbf{x} | \mathbf{y} \rangle$\\
     Here's an example with vectors:
 \[
-|\psi\rangle = \begin{pmatrix} 1 \\ -i \end{pmatrix}, \quad |\phi\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}
+|\psi\rangle = \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad |\phi\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}
 \]
 \[
 \langle \psi | \phi \rangle = \begin{pmatrix} 1 & i \end{pmatrix} \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} = \frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}}
-\]
+\] \\
+Projects $| \phi \rangle$ onto $| \psi \rangle$
+
+% ---OUTER PRODUCT--- %
+\item \textbf{Outer Product}:   $|\mathbf{x} \rangle \langle \mathbf{y}| $\\
+    Here's an example with vectors:
+    \[
+    |\psi\rangle = \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad |\phi\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}
+    \]
+    The outer product \(|\psi\rangle \otimes |\phi\rangle\) is calculated as follows:
+    \[
+    |\psi\rangle \otimes |\phi\rangle = \begin{pmatrix} 1 \\ i \end{pmatrix} \otimes \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}
+    \]
+    \[
+    |\psi\rangle \otimes |\phi\rangle = \begin{pmatrix} 1 \cdot \frac{1}{\sqrt{2}} & 1 \cdot \frac{1}{\sqrt{2}} \\ i \cdot \frac{1}{\sqrt{2}} & i \cdot \frac{1}{\sqrt{2}} \end{pmatrix}
+    \]
+    \[
+    |\psi\rangle \otimes |\phi\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ \frac{i}{\sqrt{2}} & \frac{i}{\sqrt{2}} \end{pmatrix}
+    \]
+    \item The \textbf{Norm} is defined by: $\left\| \mathbf{x} \right\| = \sqrt{\langle \mathbf{x} | \mathbf{x} \rangle} = \sqrt{|x_1|^2 + |x_2|^2 + \dots + |x_n|^2}$
+    \item \textbf{Orthonomal Set}: $B = \{|b_i \rangle, i \in I\}$ \\
+    $\langle b_i | b_i \rangle = \partial_{ij} =
+\begin{cases}
+1, & \text{if } i = j \\
+0, & \text{if } i \neq j
+\end{cases}
+$
+\item \textbf{Hilbert Space H}: complete inner-product vector.
 \end{itemize}
 
 \end{document}
