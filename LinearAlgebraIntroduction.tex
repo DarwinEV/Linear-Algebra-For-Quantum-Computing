@@ -77,82 +77,11 @@
 % \end{tcolorbox}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATRIX DEFENITION
-\section{Matrix Definitions and Operations}
-\noindent \textbf{Definition 1.1} (Matrix).
-A real-valued $(m, n)$ matrix $A$ with $m, n \in \mathbb{N}$ is an $m \cdot n$-tuple of elements $a_{ij}$, where $i = 1, \ldots, m$ and $j = 1, \ldots, n$, arranged in a rectangular pattern with $m$ rows and $n$ columns:
-
-\[ A = \begin{bmatrix} 
-a_{11} & a_{12} & \cdots & a_{1n} \\
-a_{21} & a_{22} & \cdots & a_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
-a_{m1} & a_{m2} & \cdots & a_{mn} 
-\end{bmatrix} \]
-\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATRIX ADDITION
-\noindent
-Matrix addition is an operation performed on two matrices of the same size. Given matrices $A \in \mathbb{R}^{m\times n}$ and $B \in \mathbb{R}^{m\times n}$, adding the matrices together involves adding their corresponding elements (Element-Wise):
 
 
-\[ A + B = \begin{bmatrix}
-a_{11} + b_{11} & a_{12} + b_{12} & \cdots & a_{1n} + b_{1n} \\
-a_{21} + b_{21} & a_{22} + b_{22} & \cdots & a_{2n} + b_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
-a_{m1} + b_{m1} & a_{m2} + b_{m2} & \cdots & a_{mn} + b_{mn}
-\end{bmatrix} \]
+\section{Quantum Information}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATRIX MULTIPLICATION
-\noindent Matrix multiplication is performed between two matrices, $A \in \mathbb{R}^{m\times n}$, $B \in \mathbb{R}^{n \times k}$, and results in $C = AB \in \mathbb{R}^{m \times k}$. The product \( C \) is calculated by taking the dot product of each row of matrix \( A \) with each column of matrix \( B \). We sum the products of the multiplication to obtain an entry in the corresponding row $i$ and column $j$ of C.
-
-\[ c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj} \] 
-\begin{itemize}
-    \item $a_{ik}$ is the element at row $i$ and column $k$ of matrix $A$,
-    \item $b_{kj}$ is the element at row $k$ and column $j$ of matrix $B$,
-    \item $n$ is the number of columns in matrix $A$ (which is also the number of rows in matrix $B$).
-\end{itemize}
-such that
-
-\[ A = \begin{bmatrix} 
-a_{11} & a_{12} \\
-a_{21} & a_{22} \\
-a_{31} & a_{32} \\
-\end{bmatrix} \in \mathbb{R}^{3 \times 2}, \quad
-B = \begin{bmatrix} 
-b_{11} & b_{12} & b_{13} \\
-b_{21} & b_{22} & b_{23} \\
-\end{bmatrix} \in \mathbb{R}^{2 \times 3}\]
-
-\[ C = \begin{bmatrix} 
-a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} & a_{11}b_{13} + a_{12}b_{23} \\
-a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} & a_{21}b_{13} + a_{22}b_{23} \\
-a_{31}b_{11} + a_{32}b_{21} & a_{31}b_{12} + a_{32}b_{22} & a_{31}b_{13} + a_{32}b_{23} \\
-\end{bmatrix} \]
-
-%%%%%%%%%%%%%%%%%%%% IDENTITY
-\noindent \textbf{Definition 1.2} (Identity Matrix).
-A matrix in $\mathbb{R}^{n \times n}$ that contains only 1's on its diagonal entries. 
-
-\[ I_n := \begin{bmatrix} 
-1 & 0 & \cdots & 0 \\
-0 & 1 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
-0 & 0 & \cdots & 1
-\end{bmatrix} \]
-
-
-%%%%%%%%%%%%%%%%%%%%% Linear Independence
-\newpage
-\noindent \textbf{Definition 1.3} (Linear Independence).
-In a linearly independent matrix, each column holds the property that it cannot be expressed by performing linear combinations of the other columns. i.e. if a matrix has 3 columns, you cannot multiply columns 2 or 3 by any value $c \in \mathbb{R}$ such that the columns would be the same as column 1 and vice versa. It also holds that adding two columns together with the ability to scale them also cannot equal another column in the matrix. \\
-The formal definition states: 
-A set of vectors \( \{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \} \) in a vector space \( V \) over a field \( F \) is said to be linearly independent if the only scalars \( c_1, c_2, \ldots, c_n \) satisfying the equation
-
-\[ c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \ldots + c_n \mathbf{v}_n = \mathbf{0} \]
-
-the only solution to this should be \( c_1 = c_2 = \ldots = c_n = 0 \). In other words, the only way to obtain the zero vector \( \mathbf{0} \) as a linear combination of the vectors \( \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \) is by setting all the scalar coefficients to zero.
-
-\section{3D Vector Space Representation}
+\section{Vector Space Representation}
 
 \begin{figure}[h]
     \centering
@@ -204,7 +133,7 @@ the only solution to this should be \( c_1 = c_2 = \ldots = c_n = 0 \). In other
 
 %%%%%%%%%%%%%%%%%%%%% Commutative Property
 \noindent \textbf{Definition 1.3} (Commutative Property).
-Matrix multiplication is not commutative. For Arithmetic operations of matrices, the commutative property is applied to $A + B = B + A$ as it would be applied to $5 + 7 = 7 + 5$. This is illustrated by the following example
+Matrix multiplication is commutative. For Arithmetic operations of matrices, the commutative property is applied to $A + B = B + A$ as it would be applied to $5 + 7 = 7 + 5$ or $5 \times 7 = 7 \times 5$. This is illustrated by the following example
 %%%%%EXAMPLE
 \begin{tcolorbox}[colback=gray!10, boxrule=0pt]
     \textbf{EXAMPLE}
@@ -253,22 +182,224 @@ Matrix multiplication is not commutative. For Arithmetic operations of matrices,
     \end{bmatrix} = B + A
     \]
 \end{tcolorbox}
-\noindent This example demonstrates the commutative property in 2-dimensions. The same property applies to tensors, where the difference is that the addition is performed on multiple matrices, not just 2. In quantum computing, operations on qubits are represented by matrices called quantum gates. 
+\noindent This example demonstrates the commutative property in 2-dimensions. The same property applies to tensors, where the difference is that the addition is performed on multiple matrices, not just 2. In quantum computing, operations on qubits are represented by matrices called quantum gates. \\
 
-\section{Tensors}
-\textbf{Definition 1.4} (Tensors) A Tensor is a multidimensional array. Image a matrix like a flat sheet of paper, and a tensor is when you stack more than 1 onto it.\\
-
-\noindent Kronecker product of two tensors
-\begin{align}
-    T_1 \otimes T_2 = \begin{bmatrix}
-    t_{11} \cdot T_2 & t_{12} \cdot T_2 & \cdots & t_{1n} \cdot T_2 \\
-    t_{21} \cdot T_2 & t_{22} \cdot T_2 & \cdots & t_{2n} \cdot T_2 \\
-    \vdots & \vdots & \ddots & \vdots \\
-    t_{m1} \cdot T_2 & t_{m2} \cdot T_2 & \cdots & t_{mn} \cdot T_2
+%%%%%%%%%%%%%%%%%%% DISTRIBUTIVE
+\noindent \textbf{Definition }(Distributive):
+Matrix multiplication distributes over addition. For matrices \( A \), \( B \), and \( C \), the distributive property is expressed as \( A \times (B + C) = A \times B + A \times C \), analogous to the distributive property of real numbers, \( a \times (b + c) = a \times b + a \times c \). This property is illustrated by the following example.\\
+%%%%%EXAMPLE
+\begin{tcolorbox}[colback=gray!10, boxrule=0pt]
+\textbf{EXAMPLE}
+Perform matrix multiplication and addition for the following matrices:
+\[
+A = \begin{bmatrix}
+2 & 3 \\
+-1 & 4
 \end{bmatrix}
-\end{align}
-% Commutative property of Kronecker product
-$T_1 \otimes T_2$ = $T_2 \otimes T_1$
+\quad \text{,} \quad
+B = \begin{bmatrix}
+5 & -2 \\
+0 & 1
+\end{bmatrix}
+\quad \text{, and} \quad
+C = \begin{bmatrix}
+1 & 2 \\
+3 & -4
+\end{bmatrix}
+\]
+
+To illustrate the distributive property, first, compute \( B + C \):
+\[
+B + C = \begin{bmatrix}
+5 & -2 \\
+0 & 1
+\end{bmatrix}
++
+\begin{bmatrix}
+1 & 2 \\
+3 & -4
+\end{bmatrix}
+=
+\begin{bmatrix}
+6 & 0 \\
+3 & -3
+\end{bmatrix}
+\]
+
+Now, compute \( A \times (B + C) \) and \( A \times B + A \times C \):
+\[
+A \times (B + C) = 
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
+\times
+\begin{bmatrix}
+6 & 0 \\
+3 & -3
+\end{bmatrix}
+=
+\begin{bmatrix}
+15 & -6 \\
+18 & -9
+\end{bmatrix}
+\]
+
+\[
+A \times B + A \times C = 
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
+\times
+\begin{bmatrix}
+5 & -2 \\
+0 & 1
+\end{bmatrix}
++
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
+\times
+\begin{bmatrix}
+1 & 2 \\
+3 & -4
+\end{bmatrix}
+=
+\begin{bmatrix}
+15 & -6 \\
+18 & -9
+\end{bmatrix}
+\]
+
+Thus, \( A \times (B + C) = A \times B + A \times C \), demonstrating the distributive property of matrix multiplication over addition.
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%% END Distributive
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%% Linearity
+\noindent \textbf{Linearity (Associativity)}:
+Matrix operations exhibit linearity, which is characterized by two properties: additivity and homogeneity. 
+
+\begin{itemize}
+    \item \textbf{Additivity}: For matrices \( A \), \( B \), and \( C \), and a scalar \( k \), the additivity property states that \( A + (B + C) = (A + B) + C \), similar to the associative property of addition in arithmetic. This property ensures that matrix addition is associative.
+    
+    \item \textbf{Homogeneity}: For a matrix \( A \) and scalars \( k \) and \( m \), the homogeneity property states that \( k \times (m \times A) = (k \times m) \times A \), similar to the associative property of multiplication in arithmetic. This property ensures that scalar multiplication is associative with respect to real numbers.
+\end{itemize}
+
+These properties are illustrated by the following example.\\
+
+\begin{tcolorbox}[colback=gray!10, boxrule=0pt]
+%%%%%EXAMPLE
+\textbf{EXAMPLE}
+Consider the matrix \( A \) and scalars \( k \) and \( m \):
+\[
+A = \begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
+\quad \text{,} \quad
+k = 3
+\quad \text{, and} \quad
+m = 2
+\]
+
+To demonstrate linearity, first, compute \( k \times (m \times A) \) and \( (k \times m) \times A \):
+\[
+k \times (m \times A) = 
+3 \times (2 \times 
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix})
+=
+3 \times 
+\begin{bmatrix}
+4 & 6 \\
+-2 & 8
+\end{bmatrix}
+=
+\begin{bmatrix}
+12 & 18 \\
+-6 & 24
+\end{bmatrix}
+\]
+
+\[
+(k \times m) \times A = 
+(3 \times 2) \times 
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
+=
+6 \times 
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
+=
+\begin{bmatrix}
+12 & 18 \\
+-6 & 24
+\end{bmatrix}
+\]
+
+Now, compute \( A + (B + C) \) and \( (A + B) + C \):
+\[
+A + (B + C) = 
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
++ 
+\left(
+\begin{bmatrix}
+6 & 0 \\
+3 & -3
+\end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+8 & 3 \\
+2 & 1
+\end{bmatrix}
+\]
+
+\[
+(A + B) + C = 
+\left(
+\begin{bmatrix}
+2 & 3 \\
+-1 & 4
+\end{bmatrix}
++ 
+\begin{bmatrix}
+5 & -2 \\
+0 & 1
+\end{bmatrix}
+\right)
++ 
+\begin{bmatrix}
+1 & 2 \\
+3 & -4
+\end{bmatrix}
+=
+\begin{bmatrix}
+8 & 3 \\
+2 & 1
+\end{bmatrix}
+\]
+
+Thus, \( k \times (m \times A) = (k \times m) \times A \) and \( A + (B + C) = (A + B) + C \), demonstrating the linearity of matrix operations.
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%% Linearity END
+
+
 \section{Linear Operation in Hilbert Space}
 \subsection{Dirac's Notation (Bra-ket)}
 \begin{itemize}
@@ -283,18 +414,25 @@ $T_1 \otimes T_2$ = $T_2 \otimes T_1$
     \item \textbf{Bra} is the word used for the row vector(\textbf{Conjugate Transpose}): $\bra{x} = [x_{1}^*, x_{2}^*, \dots, x_{n}^*] = (\ket{x})^* \in \mathbb{C}^n$
     
 % ---INNER PRODUCT--- %
-    \item \textbf{Inner Product}: ($|\mathbf{x} \rangle, |\mathbf{y} \rangle$) = $\langle \mathbf{x} | \mathbf{y} \rangle$\\
-    Here's an example with vectors:
+\item \textbf{Inner Product}: The inner product of two quantum state vectors \(|\mathbf{x}\rangle\) and \(|\mathbf{y}\rangle\) is denoted as \(\langle \mathbf{x} | \mathbf{y} \rangle\), and it is given by:
+\[ \langle \mathbf{x} | \mathbf{y} \rangle = \langle \psi | \phi \rangle = \psi_1^* \phi_1 + \psi_2^* \phi_2 \]
+where \(\psi_i\) and \(\phi_i\) are the components of the vectors \(|\psi\rangle\) and \(|\phi\rangle\), respectively. Here's an example with vectors:
 \[
 |\psi\rangle = \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad |\phi\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}
 \]
 \[
-\langle \psi | \phi \rangle = \begin{pmatrix} 1 & i \end{pmatrix} \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} = \frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}}
+\langle \psi | \phi \rangle = \begin{pmatrix} 1 & i \end{pmatrix} \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} = \frac{1}{\sqrt{2}} + \frac{i}{\sqrt{2}}
 \] \\
 Projects $| \phi \rangle$ onto $| \psi \rangle$
 
 % ---OUTER PRODUCT--- %
-\item \textbf{Outer Product}:   $|\mathbf{x} \rangle \langle \mathbf{y}| $\\
+\item \textbf{Outer Product}: Denoted as \(|\mathbf{x} \rangle \langle \mathbf{y}| \).
+\[ |\psi\rangle \langle \phi| = \begin{bmatrix}
+\psi_1 \\ \psi_2 \\ \vdots \\ \psi_m
+\end{bmatrix} \begin{bmatrix}
+\phi_1^* & \phi_2^* & \cdots & \phi_n^*
+\end{bmatrix} \]
+
     Here's an example with vectors:
     \[
     |\psi\rangle = \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad |\phi\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}
@@ -317,7 +455,101 @@ Projects $| \phi \rangle$ onto $| \psi \rangle$
 0, & \text{if } i \neq j
 \end{cases}
 $
-\item \textbf{Hilbert Space H}: complete inner-product vector.
+\item \textbf{Hilbert Space H}: Complete inner-product vector, i.e. the vector is in a finite-dimensional vector space.
+\begin{itemize}
+    \item Infinite-dimensional-completeness is not guaranteed.
 \end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATRIX DEFINITION
+\section{Matrix Definitions and Operations}
+\noindent \textbf{Definition 1.1} (Matrix).
+A real-valued $(m, n)$ matrix $A$ with $m, n \in \mathbb{N}$ is an $m \cdot n$-tuple of elements $a_{ij}$, where $i = 1, \ldots, m$ and $j = 1, \ldots, n$, arranged in a rectangular pattern with $m$ rows and $n$ columns:
+
+\[ A = \begin{bmatrix} 
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn} 
+\end{bmatrix} \]
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATRIX ADDITION
+\noindent
+Matrix addition is an operation performed on two matrices of the same size. Given matrices $A \in \mathbb{R}^{m\times n}$ and $B \in \mathbb{R}^{m\times n}$, adding the matrices together involves adding their corresponding elements (Element-Wise):
+
+
+\[ A + B = \begin{bmatrix}
+a_{11} + b_{11} & a_{12} + b_{12} & \cdots & a_{1n} + b_{1n} \\
+a_{21} + b_{21} & a_{22} + b_{22} & \cdots & a_{2n} + b_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} + b_{m1} & a_{m2} + b_{m2} & \cdots & a_{mn} + b_{mn}
+\end{bmatrix} \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATRIX MULTIPLICATION
+\noindent Matrix multiplication is performed between two matrices, $A \in \mathbb{R}^{m\times n}$, $B \in \mathbb{R}^{n \times k}$, and results in $C = AB \in \mathbb{R}^{m \times k}$. The product \( C \) is calculated by taking the dot product of each row of matrix \( A \) with each column of matrix \( B \). We sum the products of the multiplication to obtain an entry in the corresponding row $i$ and column $j$ of C.
+
+\[ c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj} \] 
+\begin{itemize}
+    \item $a_{ik}$ is the element at row $i$ and column $k$ of matrix $A$,
+    \item $b_{kj}$ is the element at row $k$ and column $j$ of matrix $B$,
+    \item $n$ is the number of columns in matrix $A$ (which is also the number of rows in matrix $B$).
+\end{itemize}
+such that
+
+\[ A = \begin{bmatrix} 
+a_{11} & a_{12} \\
+a_{21} & a_{22} \\
+a_{31} & a_{32} \\
+\end{bmatrix} \in \mathbb{R}^{3 \times 2}, \quad
+B = \begin{bmatrix} 
+b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23} \\
+\end{bmatrix} \in \mathbb{R}^{2 \times 3}\]
+
+\[ C = \begin{bmatrix} 
+a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} & a_{11}b_{13} + a_{12}b_{23} \\
+a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} & a_{21}b_{13} + a_{22}b_{23} \\
+a_{31}b_{11} + a_{32}b_{21} & a_{31}b_{12} + a_{32}b_{22} & a_{31}b_{13} + a_{32}b_{23} \\
+\end{bmatrix} \]
+
+%%%%%%%%%%%%%%%%%%%% IDENTITY
+\noindent \textbf{Definition 1.2} (Identity Matrix).
+A matrix in $\mathbb{R}^{n \times n}$ that contains only 1's on its diagonal entries. 
+
+\[ I_n := \begin{bmatrix} 
+1 & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & 1
+\end{bmatrix} \]
+
+
+%%%%%%%%%%%%%%%%%%%%% Linear Independence
+\newpage
+\noindent \textbf{Definition 1.3} (Linear Independence).
+In a linearly independent matrix, each column holds the property that it cannot be expressed by performing linear combinations of the other columns. i.e. if a matrix has 3 columns, you cannot multiply columns 2 or 3 by any value $c \in \mathbb{R}$ such that the columns would be the same as column 1 and vice versa. It also holds that adding two columns together with the ability to scale them also cannot equal another column in the matrix. \\
+The formal definition states: 
+A set of vectors \( \{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \} \) in a vector space \( V \) over a field \( F \) is said to be linearly independent if the only scalars \( c_1, c_2, \ldots, c_n \) satisfying the equation
+
+\[ c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \ldots + c_n \mathbf{v}_n = \mathbf{0} \]
+
+the only solution to this should be \( c_1 = c_2 = \ldots = c_n = 0 \). In other words, the only way to obtain the zero vector \( \mathbf{0} \) as a linear combination of the vectors \( \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n \) is by setting all the scalar coefficients to zero.
+
+
+\section{Tensors}
+\textbf{Definition 1.4} (Tensors) A Tensor is a multidimensional array. Image a matrix like a flat sheet of paper, and a tensor is when you stack more than 1 onto it.\\
+
+\noindent Kronecker product of two tensors
+\begin{align}
+    T_1 \otimes T_2 = \begin{bmatrix}
+    t_{11} \cdot T_2 & t_{12} \cdot T_2 & \cdots & t_{1n} \cdot T_2 \\
+    t_{21} \cdot T_2 & t_{22} \cdot T_2 & \cdots & t_{2n} \cdot T_2 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    t_{m1} \cdot T_2 & t_{m2} \cdot T_2 & \cdots & t_{mn} \cdot T_2
+\end{bmatrix}
+\end{align}
+% Commutative property of Kronecker product
+$T_1 \otimes T_2$ = $T_2 \otimes T_1$
 
 \end{document}
